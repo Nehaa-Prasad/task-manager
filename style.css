@@ -138,3 +138,30 @@ width:100%;
 }
 
 }
+
+.task-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:15px;
+font-size:14px;
+}
+
+#clearAll{
+background:#0f172a;
+color:white;
+border:none;
+padding:6px 12px;
+border-radius:6px;
+cursor:pointer;
+transition:all 0.2s ease;
+}
+
+#clearAll:hover{
+background:#020617;
+transform:scale(1.05);
+}
+
+.task-input input::placeholder{
+color:#94a3b8;
+}

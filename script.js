@@ -1,11 +1,20 @@
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
+const taskCount = document.getElementById("taskCount");
+const clearAllBtn = document.getElementById("clearAll");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 renderTasks();
 
 addBtn.addEventListener("click", addTask);
+taskInput.addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+addTask();
+}
+
+});
 
 function addTask(){
 
@@ -62,4 +71,12 @@ taskList.appendChild(li);
 
 });
 localStorage.setItem("tasks", JSON.stringify(tasks));
+const remaining = tasks.filter(task => !task.completed).length;
+
+taskCount.textContent = remaining + " tasks remaining";
 }
+
+clearAllBtn.addEventListener("click",()=>{
+tasks = [];
+renderTasks();
+});
