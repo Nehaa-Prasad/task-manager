@@ -23,12 +23,15 @@ This application allows users to manage daily tasks efficiently with a clean UI 
 - Local Storage API
 
 ## Project Structure
+
+```
 task-manager
 │
 ├── index.html
 ├── style.css
 ├── script.js
 └── README.md
+```
 
 
 ## How It Works
